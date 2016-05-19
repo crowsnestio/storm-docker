@@ -1,8 +1,11 @@
-FROM anapsix/alpine-java:jre8
+# Use edge until 3.4 is released
+FROM alpine:edge
 
 MAINTAINER Josh Sorenson <josh@crowsnest.io>
 
-RUN apk update && apk add tar curl gnupg python
+RUN mkdir -p /opt
+
+RUN apk update && apk add tar curl gnupg python openjdk8 bash
 
 RUN gpg --recv-keys E80B8FFD
 RUN curl -s https://archive.apache.org/dist/storm/apache-storm-1.0.1/apache-storm-1.0.1.tar.gz.asc -o apache-storm-1.0.1.tar.gz.asc && \
