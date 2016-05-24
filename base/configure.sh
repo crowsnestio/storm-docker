@@ -1,7 +1,9 @@
 #!/bin/sh
 
+export LOCAL_IP=$(ifconfig eth0 | grep inet\ addr | awk '{print $2}' | cut -d: -f2)
 cat >> conf/storm.yaml <<EOF
 storm.local.dir: "/tmp"
+storm.local.hostname: "$LOCAL_IP"
 EOF
 
 if [ -n "$1" ]; then
