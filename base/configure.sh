@@ -6,8 +6,7 @@ EOF
 
 if [ -n "$1" ]; then
    cat >> conf/storm.yaml <<EOF
-storm.zookeeper.servers:
-- "$1"
+storm.zookeeper.servers: ["$1"]
 EOF
 fi
 
