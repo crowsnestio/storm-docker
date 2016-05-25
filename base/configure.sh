@@ -1,12 +1,13 @@
 #!/bin/sh
 
 cat >> conf/storm.yaml <<EOF
-storm.local.dir: "/tmp"
+storm.local.dir: "/tmp/storm"
 EOF
 
 if [ -n "$1" ]; then
    cat >> conf/storm.yaml <<EOF
 storm.zookeeper.servers: ["$1"]
+topology.min.replication.count: 3
 EOF
 fi
 
