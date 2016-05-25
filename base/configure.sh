@@ -22,7 +22,7 @@ fi
 if [ -n "$PACEMAKER_SERVICE_HOST" ]; then
 	cat >> conf/storm.yaml <<EOF
 pacemaker.host: "$PACEMAKER_SERVICE_HOST"
-pacemaker.port: "$PACEMAKER_SERVICE_PORT"
+pacemaker.port: $PACEMAKER_SERVICE_PORT
 storm.cluster.state.store: "org.apache.storm.pacemaker.pacemaker_state_factory"
 EOF
 fi
