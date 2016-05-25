@@ -13,21 +13,21 @@ fi
 if [ -n "$NIMBUS_SERVICE_HOST" ]; then
    cat >> conf/storm.yaml <<EOF
 nimbus.seeds:
-  - "$NIMBUS_SERVICE_HOST"
+  - nimbus
 EOF
 fi
 
 # If there are additional nimbus hosts, make sure to add them.
 if [ -n "$NIMBUS_SECONDARY_SERVICE_HOST" ]; then
     cat >> conf/storm.yaml <<EOF
-  - "$NIMBUS_SECONDARY_SERVICE_HOST"
+  - nimbus-secondary
 EOF
 fi
 
 # If there are additional nimbus hosts, make sure to add them.
 if [ -n "$NIMBUS_TERTIARY_SERVICE_HOST" ]; then
     cat >> conf/storm.yaml <<EOF
-  - "$NIMBUS_TERTIARY_SERVICE_HOST"
+  - nimbus-tertiary
 EOF
 fi
 
