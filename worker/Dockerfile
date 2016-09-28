@@ -1,4 +1,4 @@
-FROM crowsnest/storm-base:1.0.1
+FROM crowsnest/storm-base:1.0.2
 
 MAINTAINER Josh Sorenson <josh@crowsnest.io>
 
